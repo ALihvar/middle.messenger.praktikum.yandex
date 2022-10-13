@@ -1,0 +1,37 @@
+@use '../../assets/scss/variables.scss' as variables;
+
+.btn {
+  background-color: variables.$base_color;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: .8125rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0.47rem 0.75rem;
+  text-align: center;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+}
+
+.btn-primary:active:focus, .show>.btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.15rem  rgba(variables.$base_color, 0.5);
+}
+
+.btn-primary.active, .btn-primary:active {
+  background-color: rgba(variables.$base_color, 0.8);
+  border-color: rgba(variables.$base_color, 0.5);
+  color: #fff;
+}
+
+
+.btn-primary:hover {
+  background-color: rgba(variables.$base_color, 0.8);
+  border-color: rgba(variables.$base_color, 0.5);
+  color: #fff;
+}

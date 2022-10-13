@@ -1,0 +1,55 @@
+@use '../../assets/scss/variables.scss' as variables;
+
+.sidebar {
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: variables.$background_sidebar;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: space-between;
+
+  &__content {
+    display: flex;
+  }
+
+  &__body {
+    flex-wrap: none;
+    padding: 2rem;
+    padding-top: 20px;
+    width: 300px;
+    transition: width 0.4s, visibility 0.12s;
+    max-height: 100vh;
+
+    &.close {
+      opacity: 0.1;
+      padding: 0;
+      visibility: hidden;
+    }
+  }
+
+  &__controls {
+    background-color: variables.$base_color;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__toggle {
+    cursor: pointer;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    font-size: 28px;
+    background-color: rgb(17 17 17);
+    color: white;
+    text-align: center;
+
+    &[data-status="open"] {
+      transform: rotate(180deg);
+    }
+  }
+}
