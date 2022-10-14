@@ -7,7 +7,7 @@ export default `
 
             </br>
 
-            <a href="/chat.html" class="link">
+            <a href="/pages/chat/chat.html" class="link">
                 Назад к чатам
             </a>
         </div>
