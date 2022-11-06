@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Чат</title>
-        <meta charset="UTF-8" http-equiv="cache-control" content="no-cache"/>
-        <link rel="stylesheet" href="../../assets/scss/app.scss" />
-        <link rel="stylesheet" href="./statusCode.scss" />
-    </head>
 
-    <body>
-        <div id="app"></div>
-        <script src="./index.js"> </script>
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                renderPageStatusCode('500', 'Мы уже фиксим');
-            });
-        </script>
-    </body>
+<head>
+    <title>Чат</title>
+    <meta charset="UTF-8" http-equiv="cache-control" content="no-cache" />
+    <link rel="stylesheet" href="../../assets/scss/app.scss" />
+    <link rel="stylesheet" href="./statusCode.scss" />
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="./index.ts"> </script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderPageStatusCode('500', 'Мы уже фиксим');
+        });
+    </script>
+</body>
+
 </html>

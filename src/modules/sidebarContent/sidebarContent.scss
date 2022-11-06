@@ -6,6 +6,8 @@
         .avatar {
             height: 100px;
             z-index: 10;
+            position: absolute;
+
 
             &:hover {
                 opacity: 0;
@@ -14,15 +16,34 @@
 
         &_back {
             cursor: pointer;
-            position: absolute;
+
             border-radius: 50%;
-            height: 100px;
+            height: 98px;
             width: 100px;
             background-color: rgb(153, 163, 150);
             z-index: 5;
             display: flex;
             align-items: center;
             text-align: center;
+            border: none;
+            position: relative;
+
+            // input {
+            //     display: none;
+            // }
         }
+    }
+
+    &__input_file {
+
+        cursor: pointer;
+        // opacity: 0.0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 98px;
+        width: 100px;
     }
 }

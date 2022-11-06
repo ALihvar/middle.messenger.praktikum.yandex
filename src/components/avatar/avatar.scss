@@ -1,5 +1,9 @@
 @use '../../assets/scss/variables.scss' as variables;
 
+div#avatar {
+  display: contents;
+}
+
 .avatar {
   height: 60px;
   width: 100px;

@@ -1,9 +1,15 @@
-#app{ 
+#app {
   display: flex;
   height: 100vh;
+  overflow: hidden;
 }
 
 body {
   display: block;
   margin: 0;
+}
+
+
+fragment {
+  display: contents;
 }

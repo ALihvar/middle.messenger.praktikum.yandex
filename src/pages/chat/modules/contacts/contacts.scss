@@ -1,9 +1,10 @@
 .contacts {
-    width: 400px;
+    width: 250px;
     border-right: 1px solid #EAEAEA;
     background: #FBFBFB;
     padding: 0 20px 20px 20px;
     overflow-y: scroll;
+    height: 100vh;
 
     &__search-panel {
         width: 100%;
