@@ -9,5 +9,5 @@ export const userInfo = {
 
 export const userPassword = {
   password: "Пароль",
-  password_repeat: "Новый пароль",
+  password_repeat: "Пароль",
 };
