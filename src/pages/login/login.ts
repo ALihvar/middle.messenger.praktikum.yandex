@@ -46,7 +46,6 @@ class Login extends Block {
   componentDidMount(): void {
     window.addEventListener("DOMContentLoaded", () => {
       const sidebarToggle = document.getElementById("form_login");
-      debugger;
       sidebarToggle?.addEventListener("submit", this.onSubmit);
     });
   }
