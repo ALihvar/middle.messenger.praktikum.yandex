@@ -1,0 +1,23 @@
+@use '../../assets/scss/variables.scss' as variables;
+
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+a:link {
+  color: rgba(variables.$base_color, 0.5);
+}
+
+a:visited {
+  color: rgba(variables.$base_color, 0.8);
+}
+
+a:hover {
+  color: rgba(variables.$base_color, 0.8);
+}
+
+a:active {
+  color: rgba(variables.$base_color, 0.4);
+}

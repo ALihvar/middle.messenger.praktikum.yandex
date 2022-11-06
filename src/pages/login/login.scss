@@ -1,0 +1,14 @@
+.login-form {
+    &__controls {
+        height: 70px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        padding: 1rem 0 0 0;
+
+        .btn {
+            width: 100%;
+        }
+    }
+}

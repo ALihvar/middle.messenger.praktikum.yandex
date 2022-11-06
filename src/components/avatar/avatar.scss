@@ -1,0 +1,12 @@
+@use '../../assets/scss/variables.scss' as variables;
+
+.avatar {
+  height: 60px;
+  width: 100px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../assets/images/user.png);
+  background-size: 100px;
+  border-radius: 50%;
+}

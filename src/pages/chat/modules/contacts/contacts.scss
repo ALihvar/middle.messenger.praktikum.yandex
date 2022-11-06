@@ -1,0 +1,61 @@
+.contacts {
+    width: 400px;
+    border-right: 1px solid #EAEAEA;
+    background: #FBFBFB;
+    padding: 0 20px 20px 20px;
+    overflow-y: scroll;
+
+    &__search-panel {
+        width: 100%;
+        position: sticky;
+        top: 0px;
+        background: #FBFBFB;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+
+        input {
+            width: 100%;
+        }
+    }
+
+    &__item {
+        cursor: pointer;
+        padding: 15px 0;
+        border-bottom: 1px inset rgba(95, 176, 37, 0.893);
+        height: 60px;
+        display: flex;
+    }
+
+    &__avatar {
+        height: 60px;
+        border-radius: 50%;
+    }
+
+    &__message {
+        &_last {
+            flex-grow: 1;
+            padding: 12px;
+        }
+
+        .name {
+            font-weight: 800;
+
+        }
+    }
+
+    &__img {
+        height: 60px;
+        width: 60px;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &_user {
+            background-image: url(../../../../assets/images/user.png);
+            background-size: 60px;
+            border-radius: 50%;
+        }
+    }
+}
