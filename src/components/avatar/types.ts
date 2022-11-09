@@ -1,1 +1,5 @@
-export interface AvatarProps {}
+export interface AvatarProps {
+  events?: {
+    [key: string]: (event: Event) => void;
+  };
+}

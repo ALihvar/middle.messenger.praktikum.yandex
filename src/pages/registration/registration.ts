@@ -2,8 +2,8 @@ import Handlebars from "handlebars";
 import { Block } from "../../core/block";
 import { render } from "../../core/render";
 import tplStrRegistration from "./registration.hbs";
-import { Input, Modal } from "../../components";
-import { getPattern } from "../../utils/validations";
+import { Field, Modal } from "../../components";
+import { onValidate } from "../../utils/validations";
 import fields from "./fields";
 import "./registration.scss";
 
@@ -12,44 +12,37 @@ interface RegistrationProps {
 }
 class Registration extends Block {
   constructor(props: RegistrationProps) {
-    const inputs: any = {};
-    props.fields.forEach((field) => {
-      inputs[field.key] = new Input({
-        title: field.value,
-        name: field.key,
-        type: field.type,
-        pattern: getPattern(field.key),
-        events: {
-          focus: (event: Event) => {
-            const target = event.target as HTMLFormElement;
-            target.reportValidity();
+    function getChildren(props: RegistrationProps) {
+      const inputs: any = {};
+      props.fields.forEach((field) => {
+        inputs[field.key] = new Field({
+          name: field.key,
+          type: field.type,
+          events: {
+            focus: onValidate(field.key),
+            blur: onValidate(field.key),
           },
-          blur: (event: Event) => {
-            const target = event.target as HTMLFormElement;
-            target.reportValidity();
-          },
-        },
+        });
       });
-    });
+
+      return inputs;
+    }
+
+    function onSubmit(event: Event) {
+      event.preventDefault();
+      const form = event.target as HTMLFormElement;
+      const formData: FormData = new FormData(form);
+      const entries = formData.entries();
+      const data = Object.fromEntries(entries);
+      console.log(data);
+    }
+
     super({
       ...props,
-      components: inputs,
-    });
-  }
-
-  onSubmit(event: SubmitEvent) {
-    const form = event.target as HTMLFormElement;
-    const formData: FormData = new FormData(form);
-    const entries = formData.entries();
-    const data = Object.fromEntries(entries);
-    console.log(data);
-    event.preventDefault();
-  }
-
-  componentDidMount(): void {
-    window.addEventListener("DOMContentLoaded", () => {
-      const sidebarToggle = document.getElementById("form_registration");
-      sidebarToggle?.addEventListener("submit", this.onSubmit);
+      components: getChildren(props),
+      events: {
+        submit: onSubmit,
+      },
     });
   }
 

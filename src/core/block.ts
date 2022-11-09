@@ -92,20 +92,29 @@ export abstract class Block {
     const { events = {} } = this.props;
 
     Object.keys(events).forEach((eventName) => {
-      if (eventName === "focus" || eventName === "blur") {
-        const input = this.element.querySelector("input");
-        input?.addEventListener(eventName, events[eventName].bind(this));
+      if (this._element.children.length === 1) {
+        this._element.children[0].addEventListener(
+          eventName,
+          events[eventName]
+        );
       } else {
-        this.element.addEventListener(eventName, events[eventName].bind(this));
+        this._element.addEventListener(eventName, events[eventName]);
       }
     });
   }
 
-  _removeEvents(): void {
+  _removeEvents() {
     const { events = {} } = this.props;
 
     Object.keys(events).forEach((eventName) => {
-      this.element.removeEventListener(eventName, events[eventName].bind(this));
+      if (this._element.children.length === 1) {
+        this._element.children[0].removeEventListener(
+          eventName,
+          events[eventName]
+        );
+      } else {
+        this._element.removeEventListener(eventName, events[eventName]);
+      }
     });
   }
 

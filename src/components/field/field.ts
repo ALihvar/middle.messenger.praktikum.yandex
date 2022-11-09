@@ -1,5 +1,5 @@
 import Handlebars from "handlebars";
-import { Block } from "../../../../core/block";
+import { Block } from "../../core/block";
 import tplStrField from "./field.tmpl";
 import { FieldProps } from "./types";
 

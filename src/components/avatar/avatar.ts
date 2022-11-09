@@ -5,8 +5,8 @@ import { AvatarProps } from "./types";
 import "./avatar.scss";
 
 class Avatar extends Block {
-  constructor() {
-    super();
+  constructor(props: AvatarProps) {
+    super({ ...props });
   }
 
   render(): string {

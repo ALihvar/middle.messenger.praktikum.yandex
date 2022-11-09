@@ -25,7 +25,7 @@ class Chat extends Block {
 window.renderPageChat = () => {
   const chat = new Chat();
   render(
-    "#app",
+    "#main",
     new Layout({
       components: {
         content: chat,

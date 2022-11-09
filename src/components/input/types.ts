@@ -3,7 +3,6 @@ export interface InputProps {
   name: string;
   type?: "text" | "file" | "password";
   value?: string;
-  pattern: string;
   events?: {
     [key: string]: (event: Event) => void;
   };

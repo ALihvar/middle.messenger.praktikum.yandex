@@ -16,5 +16,5 @@ export class StatusCode extends Block {
 }
 
 window.renderPageStatusCode = (code: string, message: string) => {
-  render("#app", new StatusCode({ code, message }));
+  render("#main", new StatusCode({ code, message }));
 };

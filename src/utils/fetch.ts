@@ -10,25 +10,28 @@ function queryStringify(data: { [key: string]: string }) {
 }
 
 interface Options {
-  timeout: number;
-  headers: { [key: string]: string };
-  method: "GET" | "POST" | "DELETE" | "PUT";
+  timeout?: number;
+  headers?: { [key: string]: string };
+  method?: "GET" | "POST" | "DELETE" | "PUT";
   data?: any;
 }
+
+type HTTPMethod = (url: string, options?: Options) => Promise<unknown>;
+
 class HTTPTransport {
-  get = (url: string, options: Options) => {
+  get: HTTPMethod = (url, options = {}) => {
     return this.request(url, { ...options, method: "GET" }, options.timeout);
   };
 
-  post = (url: string, options: Options) => {
+  post: HTTPMethod = (url, options = {}) => {
     return this.request(url, { ...options, method: "POST" }, options.timeout);
   };
 
-  put = (url: string, options: Options) => {
+  put: HTTPMethod = (url, options = {}) => {
     return this.request(url, { ...options, method: "PUT" }, options.timeout);
   };
 
-  delete = (url: string, options: Options) => {
+  delete: HTTPMethod = (url, options = {}) => {
     return this.request(url, { ...options, method: "DELETE" }, options.timeout);
   };
 
