@@ -1,9 +1,0 @@
-@use '../../assets/scss/variables.scss' as variables;
-
-.error-message {
-  &__text {
-    width: 100%;
-    text-align: center;
-    color: variables.$error_color
-  }
-}
